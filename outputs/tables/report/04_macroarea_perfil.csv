@@ -1,0 +1,15 @@
+macroarea,perfil,quantidade
+Biology,Central local,1
+Biology,Ponte interarea forte,3
+Chemistry,Central local,1
+Chemistry,Ponte interarea forte,1
+Chemistry,Ponte interarea moderada,2
+Computer Science,Central local,1
+Computer Science,Ponte interarea forte,2
+Computer Science,Ponte interarea moderada,2
+Engineering,Ponte interarea forte,4
+Engineering,Ponte interarea moderada,2
+Medicine and Health,Central local,6
+Medicine and Health,Ponte interarea forte,1
+Medicine and Health,Ponte interarea moderada,1
+Tie: Biology | Medicine and Health,Ponte interarea forte,1
