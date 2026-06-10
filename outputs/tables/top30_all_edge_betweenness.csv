@@ -1,0 +1,31 @@
+author_id_source,author_name_source,macroarea_source,author_id_target,author_name_target,macroarea_target,same_macroarea,edge_betweenness
+14831722300,Lima D.A.N.L.,Medicine and Health,57201607778,R. Leonardi G.,Medicine and Health,True,4808830.603376
+57201607778,R. Leonardi G.,Medicine and Health,6603267575,Velho P.E.N.F.,Medicine and Health,True,4588392.481807
+16306368600,Capitani C.D.,Tie: Biology | Medicine and Health,55981667500,De Assumpção D.,Medicine and Health,False,4368491.111102
+35328091000,da Silva J.V.L.,Computer Science,6603271904,d’Ávila M.A.,Engineering,False,4340172.411788
+35328091000,da Silva J.V.L.,Computer Science,6506736837,Pedrini H.,Computer Science,True,4326461.593318
+23093346600,Forti L.R.,Biology,26638969400,Masiero B.,Engineering,False,4179365.434192
+23093346600,Forti L.R.,Biology,7003557544,Toledo L.F.,Biology,True,4099306.800219
+26638969400,Masiero B.,Engineering,35556063400,De Alencar Lotufo R.,Computer Science,False,4035176.750151
+14831722300,Lima D.A.N.L.,Medicine and Health,23003258800,Bicas J.L.,Biology,False,3955012.936175
+16306368600,Capitani C.D.,Tie: Biology | Medicine and Health,7004835587,Velloso L.A.,Medicine and Health,False,3943283.371816
+6603267575,Velho P.E.N.F.,Medicine and Health,7004405540,Reis F.,Medicine and Health,True,3933064.185055
+16306368600,Capitani C.D.,Tie: Biology | Medicine and Health,57190026512,Strieder M.M.,Chemistry,False,3572501.575425
+35556063400,De Alencar Lotufo R.,Computer Science,6506736837,Pedrini H.,Computer Science,True,3571223.228837
+16417179800,Misuta M.S.,Medicine and Health,7005091934,Okabe E.P.,Engineering,False,3508916.644968
+55989421700,Moraes B.S.,Engineering,56910252000,Anholon R.,Economics and Business,False,3440145.357488
+35611272000,de Oliveira V.M.,Biology,7101975791,Romero G.Q.,Biology,True,3433687.271453
+7004405540,Reis F.,Medicine and Health,7006331391,Falcão A.X.,Computer Science,False,3239331.812817
+16417179800,Misuta M.S.,Medicine and Health,54685141100,Scaglia A.J.,Social Sciences,False,3228279.9473
+40262892000,Zorzeto-Cesar T.Q.,Biology,8270443200,da Silva A.J.,Geosciences,False,3227482.018954
+55981667500,De Assumpção D.,Medicine and Health,6504123736,Surita F.G.,Medicine and Health,True,3212739.220986
+35546900100,Attux R.,Computer Science,40262892000,Zorzeto-Cesar T.Q.,Biology,False,3189764.012402
+6506645414,Sachetto Z.,Medicine and Health,7004405540,Reis F.,Medicine and Health,True,3069064.64718
+23003258800,Bicas J.L.,Biology,57201607778,R. Leonardi G.,Medicine and Health,False,2976392.966245
+57201607778,R. Leonardi G.,Medicine and Health,6603271904,d’Ávila M.A.,Engineering,False,2960401.98927
+14123842600,Badan Ribeiro A.P.,Engineering,16306368600,Capitani C.D.,Tie: Biology | Medicine and Health,False,2949599.783344
+16432457600,Florindo J.,Computer Science,57201607778,R. Leonardi G.,Medicine and Health,False,2905334.364764
+12807827200,Prata A.S.,Engineering,7801313564,Christianini A.V.,Biology,False,2901086.122484
+14037194400,Fávaro W.J.,Medicine and Health,6602672295,Riccetto C.L.Z.,Medicine and Health,True,2890957.707203
+7004030554,Cardoso T.M.,Medicine and Health,7004405540,Reis F.,Medicine and Health,True,2881681.473392
+55989421700,Moraes B.S.,Engineering,7004357973,Franco T.T.,Engineering,True,2817000.674075
