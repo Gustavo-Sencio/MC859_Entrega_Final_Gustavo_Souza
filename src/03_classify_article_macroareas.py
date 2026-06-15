@@ -5,14 +5,15 @@ from pathlib import Path
 from classify_research_macroareas import classificar_autor
 
 
-INPUT_CSV = Path("checkpoints/article_topics_progress.csv")
-OUTPUT_DIR = Path("article_macroareas_output")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+INPUT_CSV = PROJECT_ROOT / "data" / "interim" / "article_topics.csv"
+OUTPUT_DIR = PROJECT_ROOT / "data" / "interim" / "article_macroareas_output"
 OUTPUT_CSV = OUTPUT_DIR / "articles_research_macroareas.csv"
 UNCLASSIFIED_TERMS_CSV = OUTPUT_DIR / "unclassified_article_terms.csv"
 
 
 def main():
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     unclassified_counter = Counter()
 
     with INPUT_CSV.open("r", newline="", encoding="utf-8") as entrada, OUTPUT_CSV.open(

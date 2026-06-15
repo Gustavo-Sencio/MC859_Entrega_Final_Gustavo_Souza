@@ -13,8 +13,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
-GRAPHML_PATH = Path("coauthorship.graphml")
-OUTPUT_DIR = Path("analysis_output")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+GRAPHML_PATH = PROJECT_ROOT / "data" / "graph" / "coauthorship.graphml"
+OUTPUT_DIR = PROJECT_ROOT / "outputs" / "analysis_output"
 SUMMARY_PATH = OUTPUT_DIR / "graph_summary.md"
 DEGREE_PLOT_PATH = OUTPUT_DIR / "degree_distribution.png"
 COMPONENT_PLOT_PATH = OUTPUT_DIR / "component_size_distribution.png"
@@ -321,7 +322,7 @@ def escrever_resumo(
 
 
 def main():
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     nodes, adjacency, weighted_degree, edge_count = carregar_grafo(GRAPHML_PATH)
     degree_counter = Counter(len(adjacency[node]) for node in nodes)

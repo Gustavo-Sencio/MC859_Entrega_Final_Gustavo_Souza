@@ -3,8 +3,9 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
-GRAPHML_PATH = Path("coauthorship.graphml")
-OUTPUT_DIR = Path("neo4j_import")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+GRAPHML_PATH = PROJECT_ROOT / "data" / "graph" / "coauthorship.graphml"
+OUTPUT_DIR = PROJECT_ROOT / "data" / "raw" / "neo4j_seed"
 NODES_CSV = OUTPUT_DIR / "authors_nodes.csv"
 EDGES_CSV = OUTPUT_DIR / "coauthorship_edges.csv"
 
@@ -36,7 +37,7 @@ def data_por_key(element):
 
 
 def exportar_csvs():
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     root = ET.parse(GRAPHML_PATH).getroot()
 

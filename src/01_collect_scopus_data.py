@@ -1,5 +1,6 @@
 import csv
 import time
+from pathlib import Path
 
 import requests
 
@@ -19,6 +20,11 @@ ANOS = range(2021, 2026)  # 2021 -> 2025
 MAX_AUTORES_ARTIGO = 5
 PAUSA_ENTRE_REQUISICOES = 0.4
 MAX_RETRIES = 3
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+RAW_DIR = PROJECT_ROOT / "data" / "raw"
+ARTICLES_CSV = RAW_DIR / "articles.csv"
+AUTHORS_CSV = RAW_DIR / "authors.csv"
 
 autores_dict = {}
 
@@ -130,7 +136,8 @@ def iterar_artigos(query):
 
 print("Abrindo arquivo de artigos...")
 
-articles_file = open("articles.csv", "w", newline="", encoding="utf-8")
+RAW_DIR.mkdir(parents=True, exist_ok=True)
+articles_file = ARTICLES_CSV.open("w", newline="", encoding="utf-8")
 articles_writer = csv.writer(articles_file)
 articles_writer.writerow(["eid", "titulo", "ano", "source", "author_id"])
 
@@ -189,7 +196,7 @@ articles_file.close()
 
 print("\nSalvando tabela de autores...")
 
-with open("authors.csv", "w", newline="", encoding="utf-8") as arquivo_autores:
+with AUTHORS_CSV.open("w", newline="", encoding="utf-8") as arquivo_autores:
     writer = csv.writer(arquivo_autores)
     writer.writerow(["author_id", "nome", "universidade", "cidade"])
     writer.writerows(autores_dict.values())

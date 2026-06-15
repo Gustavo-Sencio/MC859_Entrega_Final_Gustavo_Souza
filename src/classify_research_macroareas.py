@@ -3,9 +3,11 @@ from collections import Counter
 from pathlib import Path
 
 
-INPUT_CSV = Path("checkpoints/authors_progress.csv")
-OUTPUT_CSV = Path("real_authors_research_macroareas.csv")
-UNCLASSIFIED_TERMS_CSV = Path("unclassified_research_terms.csv")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+INPUT_CSV = PROJECT_ROOT / "data" / "interim" / "article_topics.csv"
+OUTPUT_DIR = PROJECT_ROOT / "outputs" / "tables" / "auxiliary"
+OUTPUT_CSV = OUTPUT_DIR / "real_authors_research_macroareas.csv"
+UNCLASSIFIED_TERMS_CSV = OUTPUT_DIR / "unclassified_research_terms.csv"
 
 MACROAREA_RULES = [
     ("Computer Science", [

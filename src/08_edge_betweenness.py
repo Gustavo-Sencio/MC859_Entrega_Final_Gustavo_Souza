@@ -35,17 +35,17 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--nodes",
-        default="neo4j_import/authors_nodes.csv",
+        default=str(Path(__file__).resolve().parents[1] / "data" / "raw" / "neo4j_seed" / "authors_nodes.csv"),
         help="CSV de nós exportado para o Neo4j.",
     )
     parser.add_argument(
         "--edges",
-        default="neo4j_import/coauthorship_edges.csv",
+        default=str(Path(__file__).resolve().parents[1] / "data" / "raw" / "neo4j_seed" / "coauthorship_edges.csv"),
         help="CSV de arestas exportado para o Neo4j.",
     )
     parser.add_argument(
         "--output",
-        default="tabela_relatorio/all_edge_betweenness.csv",
+        default=str(Path(__file__).resolve().parents[1] / "outputs" / "tables" / "all_edge_betweenness.csv"),
         help="CSV de saída com o betweenness de todas as arestas.",
     )
     parser.add_argument(

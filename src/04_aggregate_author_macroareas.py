@@ -3,10 +3,11 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 
-AUTHORS_CSV = Path("authors.csv")
-ARTICLES_CSV = Path("articles.csv")
-ARTICLE_MACROAREAS_CSV = Path("article_macroareas_output/articles_research_macroareas.csv")
-OUTPUT_DIR = Path("author_macroareas_output")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+AUTHORS_CSV = PROJECT_ROOT / "data" / "raw" / "authors.csv"
+ARTICLES_CSV = PROJECT_ROOT / "data" / "raw" / "articles.csv"
+ARTICLE_MACROAREAS_CSV = PROJECT_ROOT / "data" / "interim" / "article_macroareas_output" / "articles_research_macroareas.csv"
+OUTPUT_DIR = PROJECT_ROOT / "data" / "interim" / "author_macroareas_output"
 OUTPUT_CSV = OUTPUT_DIR / "author_macroareas_from_articles.csv"
 
 
@@ -111,7 +112,7 @@ def escolher_macroarea_principal(article_counter, theme_counter):
 
 
 def main():
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     autores = carregar_autores()
     artigos_por_autor = carregar_artigos_por_autor()

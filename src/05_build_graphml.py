@@ -5,10 +5,11 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
-ARTICLES_CSV = Path("articles.csv")
-AUTHORS_CSV = Path("authors.csv")
-AUTHOR_THEMATIC_CSV = Path("author_macroareas_output/author_macroareas_from_articles.csv")
-OUTPUT_GRAPHML = Path("coauthorship.graphml")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+ARTICLES_CSV = PROJECT_ROOT / "data" / "raw" / "articles.csv"
+AUTHORS_CSV = PROJECT_ROOT / "data" / "raw" / "authors.csv"
+AUTHOR_THEMATIC_CSV = PROJECT_ROOT / "data" / "interim" / "author_macroareas_output" / "author_macroareas_from_articles.csv"
+OUTPUT_GRAPHML = PROJECT_ROOT / "data" / "graph" / "coauthorship.graphml"
 
 GRAPHML_NS = "http://graphml.graphdrawing.org/xmlns"
 XSI_NS = "http://www.w3.org/2001/XMLSchema-instance"
@@ -182,6 +183,7 @@ def main():
     arestas = construir_arestas(artigos)
 
     graphml = montar_graphml(autores, artigos_por_autor, arestas)
+    OUTPUT_GRAPHML.parent.mkdir(parents=True, exist_ok=True)
     graphml.write(OUTPUT_GRAPHML, encoding="utf-8", xml_declaration=True)
 
     autores_tematicos = sum(

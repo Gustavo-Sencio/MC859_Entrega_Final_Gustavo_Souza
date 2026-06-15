@@ -12,9 +12,11 @@ HEADERS = {
     "Accept": "application/json",
 }
 
-INPUT_CSV = Path("articles.csv")
-OUTPUT_CSV = Path("article_topics.csv")
-CHECKPOINT_DIR = Path("checkpoints")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+INPUT_CSV = PROJECT_ROOT / "data" / "raw" / "articles.csv"
+INTERIM_DIR = PROJECT_ROOT / "data" / "interim"
+OUTPUT_CSV = INTERIM_DIR / "article_topics.csv"
+CHECKPOINT_DIR = INTERIM_DIR / "checkpoints"
 PROGRESS_CSV = CHECKPOINT_DIR / "article_topics_progress.csv"
 
 PAUSA_ENTRE_REQUISICOES = 0.5
@@ -49,7 +51,7 @@ def carregar_artigos_base():
 
 
 def preparar_arquivo_progresso():
-    CHECKPOINT_DIR.mkdir(exist_ok=True)
+    CHECKPOINT_DIR.mkdir(parents=True, exist_ok=True)
     if PROGRESS_CSV.exists():
         return
 
